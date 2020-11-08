@@ -23,6 +23,7 @@ require (
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be // indirect
 	github.com/blevesearch/bleve v1.0.12
+	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/cznic/b v0.0.0-20181122101859-a26611c4d92d // indirect
 	github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548 // indirect
@@ -50,6 +51,7 @@ require (
 	github.com/gobwas/glob v0.2.3
 	github.com/gogs/chardet v0.0.0-20191104214054-4b6791f73a28
 	github.com/gogs/cron v0.0.0-20171120032916-9f6c956d3e14
+	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/google/go-github/v32 v32.1.0
 	github.com/google/uuid v1.1.2
 	github.com/gorilla/context v1.1.1
@@ -65,6 +67,7 @@ require (
 	github.com/keybase/go-crypto v0.0.0-20200123153347-de78d2cb44f4
 	github.com/klauspost/compress v1.11.2
 	github.com/klauspost/pgzip v1.2.5 // indirect
+	github.com/kr/pty v1.1.8 // indirect
 	github.com/lafriks/xormstore v1.3.2
 	github.com/lib/pq v1.8.1-0.20200908161135-083382b7e6fc
 	github.com/lunny/dingtalk_webhook v0.0.0-20171025031554-e3534c89ef96
@@ -87,6 +90,7 @@ require (
 	github.com/onsi/ginkgo v1.13.0 // indirect
 	github.com/pelletier/go-toml v1.8.1
 	github.com/philhofer/fwd v1.1.0 // indirect
+	github.com/pierrec/lz4 v2.0.5+incompatible // indirect
 	github.com/pierrec/lz4/v4 v4.1.1 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/pquerna/otp v1.2.0
@@ -117,6 +121,7 @@ require (
 	go.jolheiser.com/hcaptcha v0.0.4
 	go.jolheiser.com/pwn v0.0.3
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
+	golang.org/x/exp v0.0.0-20200224162631-6cc2880d07d6 // indirect
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
 	golang.org/x/oauth2 v0.0.0-20200902213428-5d25da1a8d43
 	golang.org/x/sys v0.0.0-20201106081118-db71ae66460a
