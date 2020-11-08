@@ -75,7 +75,7 @@
 						<div class="divider"></div>
 						<a class="item link-action" href data-url="{{AppSubUrl}}/user/logout">
 							{{svg "octicon-sign-out"}}
-							{{.i18n.Tr "sign_out"}}<!-- Sign Out -->
+							{{.i18n.Tr "sign_out"}}
 						</a>
 					</div>
 				{{else if .IsSigned}}
@@ -83,7 +83,6 @@
 						<a href="{{AppSubUrl}}/notifications" class="nav-link"
 							 data-variation="tiny inverted">
 							{{svg "octicon-bell"}}
-							{{/*<span>{{.i18n.Tr "notifications"}}</span>*/}}
 							{{$notificationUnreadCount := 0}}
 							{{if .NotificationUnreadCount}}{{$notificationUnreadCount = call .NotificationUnreadCount}}{{end}}
 							<span class="badge bg-danger {{if not $notificationUnreadCount}}d-none{{end}}">
@@ -135,30 +134,16 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" onclick="window.location.assign('{{AppSubUrl}}/admin')">
 									{{svg "material-settings"}}
-									{{.i18n.Tr "admin_panel"}}<!-- Admin Panel -->
+									{{.i18n.Tr "admin_panel"}}
 								</a>
 							{{end}}
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href onclick="fetch('{{AppSubUrl}}/user/logout', {method: 'POST'}).then(function () {window.location.assign('{{AppSubUrl}}/')})">
+								{{svg "octicon-sign-out"}}
+								{{.i18n.Tr "sign_out"}}
+							</a>
 						</ul>
 					</li>
-					{{/*
-							<div class="ui dropdown jump item poping up" tabindex="-1"
-							 data-content="{{.i18n.Tr "user_profile_and_more"}}"
-							 data-variation="tiny inverted">
-						<div class="menu user-menu" tabindex="-1">
-							<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.gitea.io">
-								{{svg "octicon-question"}}
-								{{.i18n.Tr "help"}}<!-- Help -->
-							</a>
-							<div class="divider"></div>
-							<a class="item link-action" href data-url="{{AppSubUrl}}/user/logout" data-redirect="{{AppSubUrl}}/">
-								{{svg "octicon-sign-out"}}
-								{{.i18n.Tr "sign_out"}}<!-- Sign Out -->
-							</a>
-						</div><!-- end content avatar menu -->
-					</div>
-						*/}}
-					<!-- end dropdown avatar menu -->
-					<!-- end signed user right menu -->
 				{{else}}
 					<li class="nav-item">
 						<a class="nav-link" target="_blank" rel="noopener noreferrer"
