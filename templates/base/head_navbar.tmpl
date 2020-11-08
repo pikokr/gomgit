@@ -1,4 +1,30 @@
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
-<div class="d-flex p-3" style="background: #24292e; color: #fff;">
-	<a href="/" class="mr-3 text-white">뭐</a>
+<div class="d-flex" style="background: #24292e; color: #fff;">
+	<a href="/" class="mr-3 text-white">
+		<img class="ui mini image" style="width: 60px; height: auto; font-size: 0.78571429rem;" src="../assets/logo.png">
+	</a>
+	{{if and .IsSigned .MustChangePassword}}
+		{{/* No links */}}
+	{{else if .IsSigned}}
+		<a class="item {{if .PageIsDashboard}}active{{end}}" href="{{AppSubUrl}}/">{{.i18n.Tr "dashboard"}}</a>
+		{{if not .UnitIssuesGlobalDisabled}}
+			<a class="item {{if .PageIsIssues}}active{{end}}" href="{{AppSubUrl}}/issues">{{.i18n.Tr "issues"}}</a>
+		{{end}}
+		{{if not .UnitPullsGlobalDisabled}}
+			<a class="item {{if .PageIsPulls}}active{{end}}" href="{{AppSubUrl}}/pulls">{{.i18n.Tr "pull_requests"}}</a>
+		{{end}}
+		{{if not (and .UnitIssuesGlobalDisabled .UnitPullsGlobalDisabled)}}
+			{{if .ShowMilestonesDashboardPage}}<a class="item {{if .PageIsMilestonesDashboard}}active{{end}}" href="{{AppSubUrl}}/milestones">{{.i18n.Tr "milestones"}}</a>{{end}}
+		{{end}}
+		<a class="item {{if .PageIsExplore}}active{{end}}" href="{{AppSubUrl}}/explore/repos">{{.i18n.Tr "explore"}}</a>
+	{{else if .IsLandingPageHome}}
+		<a class="item {{if .PageIsHome}}active{{end}}" href="{{AppSubUrl}}/">{{.i18n.Tr "home"}}</a>
+		<a class="item {{if .PageIsExplore}}active{{end}}" href="{{AppSubUrl}}/explore/repos">{{.i18n.Tr "explore"}}</a>
+	{{else if .IsLandingPageExplore}}
+		<a class="item {{if .PageIsExplore}}active{{end}}" href="{{AppSubUrl}}/explore/repos">{{.i18n.Tr "home"}}</a>
+	{{else if .IsLandingPageOrganizations}}
+		<a class="item {{if .PageIsExplore}}active{{end}}" href="{{AppSubUrl}}/explore/organizations">{{.i18n.Tr "home"}}</a>
+	{{end}}
+
+	{{template "custom/extra_links" .}}
 </div>
