@@ -1,4 +1,18 @@
-<footer>
+<footer class="navbar navbar-expand navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" href="{{AppSubUrl}}/">
+			2020 &copy; GomGit
+		</a>
+		<ul class="navbar-nav ml-auto">
+			<select class="custom-select nav-item" onchange="window.location.assign(event.target.value)">
+				{{range .AllLangs}}
+					<option value="{{AppSubUrl}}/?lang={{.Lang}}" {{if eq $.Lang .Lang}}selected{{end}}>{{.Name}}</option>
+				{{end}}
+			</select>
+		</ul>
+	</div>
+</footer>
+<!--<footer class="page-footer">
 	<div class="ui container">
 		<div class="ui left">
 			2020 &copy; GomGit
@@ -22,3 +36,4 @@
 		</div>
 	</div>
 </footer>
+-->
