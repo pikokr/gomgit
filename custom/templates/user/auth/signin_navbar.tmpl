@@ -1,19 +1,28 @@
 {{if or .EnableOpenIDSignIn .EnableSSPI}}
-<div class="ui secondary pointing tabular top attached borderless menu new-menu navbar">
-	<a class="{{if .PageIsLogin}}active{{end}} item" rel="nofollow" href="{{AppSubUrl}}/user/login">
-		{{.i18n.Tr "auth.login_userpass"}}
-	</a>
-	{{if .EnableOpenIDSignIn}}
-	<a class="{{if .PageIsLoginOpenID}}active{{end}} item" rel="nofollow" href="{{AppSubUrl}}/user/login/openid">
-		<i class="fa fa-openid"></i>
-		&nbsp;OpenID
-	</a>
-	{{end}}
-	{{if .EnableSSPI}}
-	<a class="item" rel="nofollow" href="{{AppSubUrl}}/user/login?auth_with_sspi=1">
-		<i class="fa fa-windows"></i>
-		&nbsp;SSPI
-	</a>
-	{{end}}
-</div>
+	<nav class="navbar navbar-expand navbar-light" style="justify-content: center;">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="{{if .PageIsLogin}}active{{end}} nav-link" rel="nofollow" href="{{AppSubUrl}}/user/login">
+					{{.i18n.Tr "auth.login_userpass"}}
+				</a>
+			</li>
+			{{if .EnableOpenIDSignIn}}
+				<li class="item">
+					<a class="{{if .PageIsLoginOpenID}}active{{end}} nav-link" rel="nofollow"
+						 href="{{AppSubUrl}}/user/login/openid">
+						<i class="fa fa-openid"></i>
+						OpenID
+					</a>
+				</li>
+			{{end}}
+			{{if .EnableSSPI}}
+				<li class="nav-item">
+					<a class="nav-link" rel="nofollow" href="{{AppSubUrl}}/user/login?auth_with_sspi=1">
+						<i class="fa fa-windows"></i>
+						SSPI
+					</a>
+				</li>
+			{{end}}
+		</ul>
+	</nav>
 {{end}}
